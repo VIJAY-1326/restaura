@@ -82,7 +82,7 @@ export default function App() {
       <AuthProvider>
         <CartProvider>
           <WishlistProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
               <Routes>
                 <Route path="/" element={<CustomerLayout><HomePage /></CustomerLayout>} />
                 <Route path="/menu" element={<CustomerLayout><MenuPage /></CustomerLayout>} />

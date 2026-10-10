@@ -73,6 +73,7 @@ app.use('/api/settings', settingsRoutes);
 const frontendDistPath = path.join(__dirname, '../frontend/dist');
 if (fs.existsSync(frontendDistPath)) {
   app.use(express.static(frontendDistPath));
+  app.use('/restaura', express.static(frontendDistPath));
 
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api')) {
